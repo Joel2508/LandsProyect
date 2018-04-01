@@ -1,14 +1,15 @@
-﻿using Xamarin.Forms;
-
-namespace LandProyect
+﻿namespace LandProyect
 {
+    using LandProyect.Views;
+    using Xamarin.Forms;
+
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
 
-            MainPage = new LandProyectPage();
+            MainPage = new NavigationPage(new LoginView());
         }
 
         protected override void OnStart()
