@@ -10,9 +10,11 @@
         <ScrollView
             BindingContext="{Binding Login}">  
             <StackLayout
-                Margin="8">
+                
+                Padding="10,20,10,5">
                 <Label                    
-                    
+                    FontSize="Large"
+                    FontAttributes="Bold"
                     HorizontalOptions="Center"
                     Text="Login"
                     TextColor="White">                    
@@ -65,12 +67,12 @@
                     Orientation="Horizontal">
                     <Label
                         
-                        Text="Rememberme in this device?"
+                        Text="Rememberme in this device"
                         TextColor="White"
                         VerticalOptions="Center">                        
                     </Label>
                     <Switch
-                        IsToggled="{Binding IsRememberme, Mode=TwoWay}"
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
                         HorizontalOptions="EndAndExpand">                        
                     </Switch>
                     
@@ -89,6 +91,7 @@
                             BackgroundColor="Blue"
                             Command="{Binding LoginCommand}"
                             BorderRadius="26"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             Text="Login"
                             TextColor="White">                            
                         </Button>
@@ -96,6 +99,7 @@
                             BackgroundColor="Purple"
                             Command="{Binding RegisterCommand}"
                             BorderRadius="26"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             Text="Register"
                             TextColor="White">                            
                         </Button>
@@ -103,15 +107,18 @@
                     <StackLayout
                         Orientation="Horizontal">
                         <Image
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             WidthRequest="100"
                             Source="facebook">                            
                         </Image>
                         <Image
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             WidthRequest="75"
                             Source="twitter">                            
                         </Image>
                         <Image
                             WidthRequest="100"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             Source="instagram">                            
                         </Image>
                     </StackLayout>
