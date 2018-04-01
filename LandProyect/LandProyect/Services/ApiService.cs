@@ -4,11 +4,40 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using LandProyect.Models;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 
 namespace LandProyect.Services
 {
     public class ApiService
     {
+        public async Task<Response> CheckConnection()
+        {
+            if(!CrossConnectivity.Current.IsConnected)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = "Please turn on your internet setting.",
+                };
+            }
+            var isReachable = await CrossConnectivity.Current.IsRemoteReachable("google.com");
+            if(!isReachable)
+            {
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Check you internet connection.",
+                };
+            }
+
+            return new Response
+            {
+                IsSuccess = true,
+                Message = "OK",
+            };
+        }
+
+
         public async Task<Response> GetLis<T>(string urlBase, string servicePrefix, string controller)
         {
             try

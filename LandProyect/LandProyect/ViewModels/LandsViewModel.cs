@@ -33,6 +33,16 @@
 
         private async void LoadLands()
         {
+
+            var connection = await this.apiService.CheckConnection();
+            if(!connection.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Accept");
+                await Application.Current.MainPage.Navigation.PopAsync();
+                return;
+            }
+
+
             var response = await this.apiService.GetLis<Land>(
                 "https://restcountries.eu",
                 "/rest",
@@ -40,6 +50,7 @@
             if(!response.IsSuccess)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await Application.Current.MainPage.Navigation.PopAsync();
                 return;
             }
             var list = (List<Land>)response.Result;
