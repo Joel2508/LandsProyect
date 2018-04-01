@@ -1,10 +1,12 @@
-﻿using System;
-namespace LandProyect.Models
+﻿namespace LandProyect.Models
 {
+    using Newtonsoft.Json;
     public class RegionalBloc
     {
-        public RegionalBloc()
-        {
-        }
+        [JsonProperty(PropertyName = "acronym")]
+        public string Acronym { get; set; }
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
     }
 }

@@ -7,45 +7,76 @@ namespace LandProyect.Models
     public class Land
     {
         
-        [JsonProperty(PropertyName = "code")]
-        public string name { get; set; }
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
 
-        [JsonProperty(PropertyName = "code")]
-        public List<string> topLevelDomain { get; set; }
+        [JsonProperty(PropertyName = "topLevelDomain")]
+        public List<string> TopLevelDomain { get; set; }
 
-        [JsonProperty(PropertyName = "code")]
-        public string alpha2Code { get; set; }
-        [JsonProperty(PropertyName = "code")]
-        public string alpha3Code { get; set; }
-        [JsonProperty(PropertyName = "code")]
-        public List<string> callingCodes { get; set; }
-        [JsonProperty(PropertyName = "code")]
-        public string capital { get; set; }
+        [JsonProperty(PropertyName = "alpha2Code")]
+        public string Alpha2Code { get; set; }
+
+        [JsonProperty(PropertyName = "alpha3Code")]
+        public string Alpha3Code { get; set; }
+
+        [JsonProperty(PropertyName = "callingCodes")]
+        public List<string> CallingCodes { get; set; }
+
+        [JsonProperty(PropertyName = "capital")]
+        public string Capital { get; set; }
+
         [JsonProperty(PropertyName = "code")]
         public List<string> altSpellings { get; set; }
-        [JsonProperty(PropertyName = "code")]
-        public string region { get; set; }
 
-        [JsonProperty(PropertyName = "code")]
-        public string subregion { get; set; }
+        [JsonProperty(PropertyName = "region")]
+        public string Region { get; set; }
 
-        [JsonProperty(PropertyName = "code")]
-        public int population { get; set; }
+        [JsonProperty(PropertyName = "subregion")]
+        public string Subregion { get; set; }
 
-        [JsonProperty(PropertyName = "code")]
-        public List<int> latlng { get; set; }
-        public string demonym { get; set; }
-        public int area { get; set; }
-        public double gini { get; set; }
-        public List<string> timezones { get; set; }
-        public List<string> borders { get; set; }
-        public string nativeName { get; set; }
-        public string numericCode { get; set; }
-        public List<Currency> currencies { get; set; }
-        public List<Language> languages { get; set; }
-        public Translations translations { get; set; }
-        public string flag { get; set; }
-        public List<RegionalBloc> regionalBlocs { get; set; }
-        public string cioc { get; set; }
+        [JsonProperty(PropertyName = "population")]
+        public int Population { get; set; }
+
+        [JsonProperty(PropertyName = "latlng")]
+        public List<double> Latlng { get; set; }
+
+        [JsonProperty(PropertyName = "demonym")]
+        public string Demonym { get; set; }
+
+        [JsonProperty(PropertyName = "area")]
+        public double? Area { get; set; }
+
+        [JsonProperty(PropertyName = "gini")]
+        public double? Gini { get; set; }
+
+        [JsonProperty(PropertyName = "timezones")]
+        public List<string> Timezones { get; set; }
+
+        [JsonProperty(PropertyName = "borders")]
+        public List<string> Borders { get; set; }
+
+        [JsonProperty(PropertyName = "nativeName")]
+        public string NativeName { get; set; }
+
+        [JsonProperty(PropertyName = "numericCode")]
+        public string NumericCode { get; set; }
+
+        [JsonProperty(PropertyName = "currencies")]
+        public List<Currency> Currencies { get; set; }
+
+        [JsonProperty(PropertyName = "languages")]
+        public List<Language> Languages { get; set; }
+
+        [JsonProperty(PropertyName = "translations")]
+        public Translations Translations { get; set; }
+
+        [JsonProperty(PropertyName = "flag")]
+        public string Flag { get; set; }
+
+        [JsonProperty(PropertyName = "regionalBlocs")]
+        public List<RegionalBloc> RegionalBlocs { get; set; }
+
+        [JsonProperty(PropertyName = "cioc")]
+        public string Cioc { get; set; }
     }
 }
