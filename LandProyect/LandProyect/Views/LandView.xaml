@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="LandProyect.Views.LandView"
-        BindingContext="{Binding Main, Source={StaticResource Locator}}">
+        BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Information">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Land}">

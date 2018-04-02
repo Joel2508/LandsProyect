@@ -42,6 +42,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\LandTabbedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BordersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CurrenciesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TranlationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LanguajesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -75,6 +95,21 @@
     </Compile>
     <Compile Include="ViewModels\LandViewModel.cs" />
     <Compile Include="ViewModels\LandItemViewModel.cs" />
+    <Compile Include="Views\LandTabbedView.xaml.cs">
+      <DependentUpon>LandTabbedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BordersView.xaml.cs">
+      <DependentUpon>BordersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CurrenciesView.xaml.cs">
+      <DependentUpon>CurrenciesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TranlationsView.xaml.cs">
+      <DependentUpon>TranlationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LanguajesView.xaml.cs">
+      <DependentUpon>LanguajesView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
