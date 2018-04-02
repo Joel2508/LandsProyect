@@ -5,7 +5,7 @@
     x:Class="LandProyect.Views.LoginView"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     BackgroundImage="paisaje1.jpg"
-    Title="Lands">
+    Title="Login">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">  
@@ -16,7 +16,7 @@
                     FontSize="Large"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Text="Login"
+                    Text="Lands"
                     TextColor="White">                    
                 </Label>
                 <Image
@@ -108,13 +108,16 @@
                         Orientation="Horizontal">
                         <Image
                             IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                            WidthRequest="100"
+                            WidthRequest="100"                            
                             Source="facebook">                            
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LoginFacebookCommand}"/>
+                            </Image.GestureRecognizers>
                         </Image>
                         <Image
                             IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             WidthRequest="75"
-                            Source="twitter">                            
+                            Source="twitter.png">                            
                         </Image>
                         <Image
                             WidthRequest="100"

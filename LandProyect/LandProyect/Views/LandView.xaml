@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LandProyect.Views.LandView"
+        BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Land}">
+            <StackLayout
+                Padding="5">
+                <Label
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="{Binding Land.Name}"
+                    TextColor="Black">                    
+                </Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+
+                        Text="Capital:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="{Binding Land.Capital}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Population:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Text="{Binding Land.Population, StringFormat='{0:N0}'}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="Area:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Text="{Binding Land.Area, StringFormat='{0:N0}'}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Text="Alpha Code 2:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Text="{Binding Land.Alpha2Code}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="Alpha Code 3:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Text="{Binding Land.Alpha3Code}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="5"
+                        Text="Region:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="5"
+                        Text="{Binding Land.Region}"
+                        TextColor="Black">                        
+                    </Label>
+                    
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="6"
+                        Text="Sub-region:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="6"
+                        Text="{Binding Land.Subregion}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="7"
+                        Text="Demonym:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="7"
+                        Text="{Binding Land.Demonym}"
+                        TextColor="Black">                        
+                    </Label>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="8"
+                        Text="GINI:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="8"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Gini, StringFormat='{0:N2}'}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="9"
+                        Text="Native Name:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="9"
+                        Text="{Binding Land.NativeName}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="10"
+                        Text="Numeric Code:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="10"
+                        Text="{Binding Land.NativeName}"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="11"
+                        Text="CIOC:"
+                        TextColor="Black">                        
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="11"
+                        Text="{Binding Land.Cioc}"
+                        TextColor="Black">                        
+                    </Label>                   
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

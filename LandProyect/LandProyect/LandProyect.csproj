@@ -38,6 +38,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\LandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -66,6 +70,11 @@
     <Compile Include="Models\Response.cs" />
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Models\TokenResponse.cs" />
+    <Compile Include="Views\LandView.xaml.cs">
+      <DependentUpon>LandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\LandViewModel.cs" />
+    <Compile Include="ViewModels\LandItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -26,7 +26,7 @@ namespace LandProyect.Models
         public string Capital { get; set; }
 
         [JsonProperty(PropertyName = "code")]
-        public List<string> altSpellings { get; set; }
+        public List<string> AltSpellings { get; set; }
 
         [JsonProperty(PropertyName = "region")]
         public string Region { get; set; }

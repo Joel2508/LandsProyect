@@ -90,7 +90,7 @@
 
             this.Email = string.Empty;
             this.Password = string.Empty;
-            MainViewModel.GetInstance().Land = new LandsViewModel();
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new LandsView());
         }
         #endregion

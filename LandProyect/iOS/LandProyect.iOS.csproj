@@ -132,6 +132,7 @@
     <BundleResource Include="Resources\paisaje1.jpg" />
     <BundleResource Include="Resources\twitter.png" />
     <BundleResource Include="Resources\instagram.png" />
+    <BundleResource Include="Resources\ic_chevron_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
