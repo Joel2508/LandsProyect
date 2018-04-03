@@ -155,7 +155,7 @@
                     <Label
                         Grid.Column="1"
                         Grid.Row="10"
-                        Text="{Binding Land.NativeName}"
+                        Text="{Binding Land.NumericCode}"
                         TextColor="Black">                        
                     </Label>
                     <Label

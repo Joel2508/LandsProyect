@@ -37,6 +37,7 @@
                         VerticalOptions="Center">                        
                     </Label>
                     <Entry
+                     BackgroundColor="White"
                         Text="{Binding Email, Mode=TwoWay}"
                         Grid.Row="0"
                         Grid.Column="1"
@@ -51,9 +52,11 @@
                         VerticalOptions="Center">                        
                     </Label>
                     <Entry
+                     BackgroundColor="White"
                         Text="{Binding Password, Mode=TwoWay}"
                         Grid.Row="1"
                         Grid.Column="1"
+                        TextColor="White"
                         IsPassword="true"
                         Placeholder="Enter your email...">                        
                     </Entry>
