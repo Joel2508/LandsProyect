@@ -59,7 +59,7 @@
                         Grid.Column="1"
                         TextColor="Black"
                         IsPassword="true"
-                        Placeholder="Enter your email...">                        
+                        Placeholder="Enter your password...">                        
                     </Entry>
                 </Grid>
                 <ActivityIndicator
