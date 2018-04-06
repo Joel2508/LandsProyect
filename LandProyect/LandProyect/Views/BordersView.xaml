@@ -4,14 +4,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="LandProyect.Views.BordersView"       
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Information">
+    Icon="ic_action_language"
+    Title="Borders">
 
     <ContentPage.Content>
            <StackLayout
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
+            BindingContext="{Binding Land}">
             <Label
-                Text="Bordes">                
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="{Binding Land.Name}"
+                TextColor="Black">                    
             </Label>
         </StackLayout>
     </ContentPage.Content>
