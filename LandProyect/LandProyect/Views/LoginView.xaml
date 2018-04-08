@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="LandProyect.Views.LoginView"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    BackgroundImage="paisaje1.jpg"
+    BackgroundImage="paisaje2.jpg"
     Title="Login">
     <ContentPage.Content>
         <ScrollView

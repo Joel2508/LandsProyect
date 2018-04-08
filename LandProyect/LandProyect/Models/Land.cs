@@ -1,5 +1,4 @@
-﻿
-namespace LandProyect.Models
+﻿namespace LandProyect.Models
 {
     using System.Collections.Generic;
     using Newtonsoft.Json;
