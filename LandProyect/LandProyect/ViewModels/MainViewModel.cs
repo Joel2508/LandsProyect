@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using LandProyect.Models;
+
 namespace LandProyect.ViewModels
 {
     public class MainViewModel
@@ -20,6 +23,15 @@ namespace LandProyect.ViewModels
             set;
         }
         #endregion
+
+        #region Properties
+        public List<Land> LandsList
+        {
+            get;
+            set;
+        }
+        #endregion
+
 
         #region Contructor
         public MainViewModel()
