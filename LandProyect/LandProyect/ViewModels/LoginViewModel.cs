@@ -3,6 +3,7 @@
     using System.ComponentModel;
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
+    using LandProyect.Services;
     using LandProyect.Views;
     using Xamarin.Forms;
 
@@ -16,6 +17,9 @@
         private bool isEnabled;
         #endregion
 
+        #region Service
+        private ApiService apiService;
+        #endregion
 
         #region Properties
         public string Email
@@ -49,10 +53,9 @@
         #region Constructor
         public LoginViewModel()
         {
+            this.apiService = new ApiService();
             this.IsRemembered = true;
             this.IsEnabled = true;
-            this.Email = "Joel2508@gmail.com";
-            this.Password = "1234";
         }
 
         #endregion
@@ -78,20 +81,57 @@
                 return;
             }
             this.IsRunning = true;
-            if (this.Email != "Joel2508@gmail.com" || this.Password != "1234")
+            this.IsEnabled = false;
+
+            var connection = await apiService.CheckConnection();
+            if(!connection.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Email or password incorrect. ", "Accept");
-                this.Password = string.Empty;
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert("Error",
+                                                                connection.Message,
+                                                                "Accept");
                 return;
             }
+
+            var token = await this.apiService.
+                                  GetToken("http://sampelwebsite.somee.com",
+                                           this.Email, this.Password);
+
+            if(token == null)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert("Error",
+                                                                "Something was worng, please try later.",
+                                                                "Accept");
+                return;
+
+            }
+            if(string.IsNullOrEmpty(token.AccessToken))
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert("Error",
+                                                                token.ErrorDescription,
+                                                                "Accept");
+                this.Password = string.Empty;
+                return;
+
+            }
+
+            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = token;
+            mainViewModel.Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsView());
+
 
             this.IsRunning = false;
             this.IsEnabled = true;
 
             this.Email = string.Empty;
             this.Password = string.Empty;
-            MainViewModel.GetInstance().Lands = new LandsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new LandsView());
+
         }
         #endregion
     }
