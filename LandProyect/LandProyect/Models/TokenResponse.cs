@@ -5,7 +5,7 @@ namespace LandProyect.Models
 {
     public class TokenResponse
     {
-        [JsonProperty(PropertyName = "acces_token")]
+        [JsonProperty(PropertyName = "access_token")]
         public string AccessToken
         {
             get;
