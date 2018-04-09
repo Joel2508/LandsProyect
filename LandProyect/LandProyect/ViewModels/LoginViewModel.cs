@@ -49,7 +49,6 @@
         }
         #endregion
 
-
         #region Constructor
         public LoginViewModel()
         {

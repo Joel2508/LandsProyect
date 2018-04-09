@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using LandProyect.Models;
-using Newtonsoft.Json;
-using Plugin.Connectivity;
-
-namespace LandProyect.Services
+﻿namespace LandProyect.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text;
+    using System.Threading.Tasks;
+    using LandProyect.Models;
+    using Newtonsoft.Json;
+    using Plugin.Connectivity;
+
     public class ApiService
     {
+
+        #region Method Connection Internet
         public async Task<Response> CheckConnection()
         {
-            if(!CrossConnectivity.Current.IsConnected)
+            if (!CrossConnectivity.Current.IsConnected)
             {
                 return new Response
                 {
@@ -22,7 +24,7 @@ namespace LandProyect.Services
                 };
             }
             var isReachable = await CrossConnectivity.Current.IsRemoteReachable("google.com");
-            if(!isReachable)
+            if (!isReachable)
             {
                 return new Response
                 {
@@ -38,7 +40,9 @@ namespace LandProyect.Services
             };
         }
 
+        #endregion
 
+        #region Methods Get List 
         public async Task<Response> GetLis<T>(string urlBase, string servicePrefix, string controller)
         {
             try
@@ -78,6 +82,10 @@ namespace LandProyect.Services
             }
         }
 
+        #endregion
+
+        #region Methods Get Token
+
         public async Task<TokenResponse> GetToken(string urlBase, string userName, string password)
         {
             try
@@ -87,7 +95,7 @@ namespace LandProyect.Services
                 var response = await client.PostAsync("Token",
                 new StringContent(string.Format("grant_type=password&username={0}&password={1}",
                 userName, password),
-                Encoding.UTF8,"application/x-www-form-urlencoded"));
+                Encoding.UTF8, "application/x-www-form-urlencoded"));
                 var resultJson = await response.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<TokenResponse>(resultJson);
                 return result;
@@ -97,5 +105,7 @@ namespace LandProyect.Services
                 return null;
             }
         }
+        #endregion
     }
+
 }
